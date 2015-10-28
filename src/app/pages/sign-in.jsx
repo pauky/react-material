@@ -1,7 +1,7 @@
 /** In this file, we create a React component which incorporates components provided by material-ui */
 
 const React = require('react');
-let { TextField, FlatButton } = require('material-ui');
+let { TextField, RaisedButton, FlatButton } = require('material-ui');
 const Layout = require('app/components/layout');
 
 class SignIn extends React.Component {
@@ -21,7 +21,10 @@ class SignIn extends React.Component {
             hintText="密码"
             floatingLabelText="密码"
             type="password" /><br/>
-          <FlatButton label="登录" secondary={true} />
+          <RaisedButton label="登录" secondary={true} />
+          <div>
+            <FlatButton label="去注册" secondary={true} linkButton={true} href="/#/signUp" />
+          </div>
         </div>
       </Layout>
     );
