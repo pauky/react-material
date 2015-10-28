@@ -4,7 +4,7 @@ const React = require('react');
 let { TextField, FlatButton } = require('material-ui');
 const Layout = require('app/components/layout');
 
-class SignIn extends React.Component {
+class SignUp extends React.Component {
 
   constructor(props) {
     super(props);
@@ -15,18 +15,25 @@ class SignIn extends React.Component {
       <Layout>
         <div className="sign-in-form text-center">
           <TextField
-            hintText="邮箱或用户名"
-            floatingLabelText="账号" /><br/>
+            hintText="邮箱"
+            floatingLabelText="邮箱" /><br/>
+          <TextField
+            hintText="用户名"
+            floatingLabelText="用户名" /><br/>
           <TextField
             hintText="密码"
             floatingLabelText="密码"
             type="password" /><br/>
-          <FlatButton label="登录" secondary={true} />
+          <TextField
+            hintText="再次确认密码"
+            floatingLabelText="再次确认密码"
+            type="password" /><br/>
+          <FlatButton label="注册" secondary={true} />
         </div>
       </Layout>
     );
   }
 
 }
-module.exports = SignIn;
+module.exports = SignUp;
 

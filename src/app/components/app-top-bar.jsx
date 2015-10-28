@@ -23,7 +23,7 @@ class AppTopBar extends React.Component {
           }>
             <MenuItem primaryText="Home" href="/#/" />
             <MenuItem primaryText="Sign In" href="/#/signIn" />
-            <MenuItem primaryText="Sign out" />
+            <MenuItem primaryText="Sign up" href="/#/signUp"/>
           </IconMenu>
       } />
     );

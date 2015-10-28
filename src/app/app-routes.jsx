@@ -9,6 +9,7 @@ const {
 const Master = require('app/components/master');
 const Home = require('app/pages/home');
 const SignIn = require('app/pages/sign-in');
+const SignUp = require('app/pages/sign-up');
 
 
 /**
@@ -23,6 +24,7 @@ const SignIn = require('app/pages/sign-in');
 const AppRoutes = (
   <Route path="/" component={Master}>
     <Route path="signIn" component={SignIn} />
+    <Route path="signUp" component={SignUp} />
     <IndexRoute component={Home}/>
   </Route>
 );
