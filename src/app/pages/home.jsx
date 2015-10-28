@@ -3,6 +3,7 @@
 const React = require('react');
 const Layout = require('app/components/layout');
 const PartyCard = require('app/components/party-card');
+const HotPartiesList = require('app/components/hot-parties-list');
 
 class Home extends React.Component {
 
@@ -14,10 +15,15 @@ class Home extends React.Component {
     return (
       <div>
         <Layout />
-        <div style={{width: "960px", "margin": "80px auto 0 auto"}}>
-          <PartyCard />
-          <PartyCard />
-          <PartyCard />
+        <div className="container" style={{"maxWidth": "960px", "margin": "80px auto 0 auto"}}>
+          <div className="right-bar" style={{"float": "right", "maxWidth": "300px"}}>
+            <HotPartiesList />
+          </div>
+          <div className="party-cards-list" style={{"maxWidth": "650px"}}>
+            <PartyCard />
+            <PartyCard />
+            <PartyCard />
+          </div>
         </div>
       </div>
     );
