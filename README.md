@@ -1,4 +1,4 @@
-# [React-Material]
+# React-Material
 
 This is an project that uses [Material-UI](http://callemall.github.io/material-ui/), React, Webpack.
 
