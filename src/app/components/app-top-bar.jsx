@@ -22,8 +22,8 @@ class AppTopBar extends React.Component {
   render() {
     let menuItems = [
       { type: MenuItem.Types.LINK, payload: '/#/', text: 'Home' },
-      { type: MenuItem.Types.LINK, payload: '/#/signIn', text: 'SignIn' },
-      { type: MenuItem.Types.LINK, payload: '/#/signUp', text: 'SignUp' },
+      { type: MenuItem.Types.LINK, payload: '/#/signIn', text: '登录' },
+      { type: MenuItem.Types.LINK, payload: '/#/launchParty', text: '发布聚会' },
       { type: MenuItem.Types.SUBHEADER, text: 'Pauky' },
     ];
 
