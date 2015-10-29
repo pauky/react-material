@@ -1,3 +1,8 @@
+/**
+ * 聚会列表
+ * @type {*|exports|module.exports}
+ */
+
 const React = require('react');
 let {
   List,

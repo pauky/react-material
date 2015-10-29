@@ -1,3 +1,7 @@
+/**
+ * app入口
+ */
+
 (function () {
   let React = require('react');
   const {Router} = require('react-router');

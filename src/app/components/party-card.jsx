@@ -1,3 +1,8 @@
+/**
+ * 聚会列表子项
+ * @type {*|exports|module.exports}
+ */
+
 const React = require('react');
 const AppTopBar = require('./app-top-bar');
 let {

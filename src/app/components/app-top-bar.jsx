@@ -1,3 +1,8 @@
+/**
+ * 首页头部
+ * @type {*|exports|module.exports}
+ */
+
 let React = require('react');
 let { AppBar, FlatButton, LeftNav, IconMenu, MenuItem } = require('material-ui');
 let IconButton = require('icon-button');

@@ -1,4 +1,7 @@
-/** In this file, we create a React component which incorporates components provided by material-ui */
+/**
+ * 登录模块
+ * @type {*|exports|module.exports}
+ */
 
 const React = require('react');
 let { TextField, RaisedButton, FlatButton } = require('material-ui');
