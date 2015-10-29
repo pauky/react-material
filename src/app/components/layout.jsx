@@ -14,7 +14,7 @@ const Layout = React.createClass({
     return (
       <div>
         <AppTopBar />
-          <div className="container" style={{"maxWidth": "960px", "margin": "80px auto 0 auto"}}>
+          <div className="container" style={{"maxWidth": "960px", "margin": "64px auto 0 auto"}}>
             {this.props.children}
           </div>
         <AppFooter />

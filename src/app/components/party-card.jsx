@@ -5,8 +5,8 @@
 
 const React = require('react');
 const AppTopBar = require('./app-top-bar');
-require('style/components/party-card.less');
 import { Link } from 'react-router';
+require('style/components/party-card.less');
 
 class PartyCard extends React.Component {
 
@@ -15,7 +15,7 @@ class PartyCard extends React.Component {
     return (
       <div className="party-card">
         <h2 className="title">
-          <Link to={`/signIn`}>
+          <Link to={`/party/123`}>
             This is Title
           </Link>
         </h2>
@@ -26,18 +26,19 @@ class PartyCard extends React.Component {
           </Link>
         </div>
         <div className="attend-party-users">
-          <span className="item-user">
+          <Link to={`/`} className="item-user">
             <img src="http://material-ui.com/images/uxceo-128.jpg" />
-          </span>
-          <span className="item-user">
+          </Link>
+          <Link to={`/`} className="item-user">
             <img src="http://material-ui.com/images/uxceo-128.jpg" />
-          </span>
-          <span className="item-user">
+          </Link>
+          <Link to={`/`} className="item-user">
             <img src="http://material-ui.com/images/uxceo-128.jpg" />
-          </span>
+          </Link>
         </div>
       </div>
     );
+
   }
 
 };
