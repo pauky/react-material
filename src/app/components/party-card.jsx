@@ -19,12 +19,11 @@ class PartyCard extends React.Component {
             This is Title
           </Link>
         </h2>
-        <div className="subtitle">This is Subtitle</div>
-        <div className="photo">
-          <Link to={`/signIn`}>
-            <img src="http://lorempixel.com/600/337/nature/" />
-          </Link>
+        <div className="time-and-address">
+          <span className="time">时间：2015-10-20 12:00</span>
+          <span className="address pull-right">地址：广州市南方医科大学</span>
         </div>
+        <div className="subtitle">This is Subtitle</div>
         <div className="attend-party-users">
           <Link to={`/`} className="item-user">
             <img src="http://material-ui.com/images/uxceo-128.jpg" />

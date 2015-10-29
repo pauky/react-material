@@ -1,5 +1,5 @@
 /**
- * 登录模块
+ * 聚会详情页
  * @type {*|exports|module.exports}
  */
 
@@ -17,6 +17,7 @@ let {
   Toggle,
   RaisedButton,
   } = require('material-ui');
+import { Link } from 'react-router';
 let { Colors } = Styles;
 
 require('style/pages/party-detail.less');
@@ -28,6 +29,7 @@ class PartyDetail extends React.Component {
   }
 
   render() {
+    let imageAvatar = <Link to={`/user/123`}><Avatar src="http://material-ui.com/images/uxceo-128.jpg" /></Link>;
     return (
       <Layout>
         <div className="party-detail-page">
@@ -45,56 +47,56 @@ class PartyDetail extends React.Component {
               <p>This is The Party Content</p>
             </div>
             <div className="participants">
-              <List subheader="参会人员">
+              <List subheader="参会人员：">
                 <ListItem
                   leftAvatar={<Avatar src="http://material-ui.com/images/ok-128.jpg" />}
                   primaryText="Brunch this weekend?"
                   secondaryText={
-                  <p>
-                    <span style={{color: Colors.darkBlack}}>Brendan Lim</span> --
-                    I&apos;ll be in your neighborhood this weekend.
-                  </p>
-                } />
+                <p>
+                  <span style={{color: Colors.darkBlack}}>Brendan Lim</span> --
+                  I&apos;ll be in your neighborhood this weekend.
+                </p>
+              } />
                 <ListDivider inset={true} />
                 <ListItem
                   leftAvatar={<Avatar src="http://material-ui.com/images/uxceo-128.jpg" />}
                   primaryText="Oui oui"
                   secondaryText={
-                  <p>
-                    <span style={{color: Colors.darkBlack}}>Grace Ng</span> --
-                    Do you have Paris recommendations?
-                  </p>
-                } />
+                <p>
+                  <span style={{color: Colors.darkBlack}}>Grace Ng</span> --
+                  Do you have Paris recommendations?
+                </p>
+              } />
                 <ListDivider inset={true} />
                 <ListItem
                   leftAvatar={<Avatar src="http://material-ui.com/images/kerem-128.jpg" />}
                   primaryText="Birthday gift"
                   secondaryText={
-                  <p>
-                    <span style={{color: Colors.darkBlack}}>Kerem Suer</span> --
-                    Do you have any ideas on what I
-                  </p>
-                } />
+                <p>
+                  <span style={{color: Colors.darkBlack}}>Kerem Suer</span> --
+                  Do you have any ideas on what I
+                </p>
+              } />
                 <ListDivider inset={true} />
                 <ListItem
                   leftAvatar={<Avatar src="http://material-ui.com/images/raquelromanp-128.jpg" />}
                   primaryText="Recipe to try"
                   secondaryText={
-                  <p>
-                    <span style={{color: Colors.darkBlack}}>Raquel Parrado</span> --
-                    We should eat this: grated cheese
-                  </p>
-                } />
+                <p>
+                  <span style={{color: Colors.darkBlack}}>Raquel Parrado</span> --
+                  We should eat this: grated cheese
+                </p>
+              } />
                 <ListDivider inset={true} />
                 <ListItem
                   leftAvatar={<Avatar src="http://material-ui.com/images/chexee-128.jpg" />}
                   primaryText="Giants game"
                   secondaryText={
-                  <p>
-                    <span style={{color: Colors.darkBlack}}>Chelsea Otakan</span> --
-                    Any interest in seeing the Giants
-                  </p>
-                } />
+                <p>
+                  <span style={{color: Colors.darkBlack}}>Chelsea Otakan</span> --
+                  Any interest in seeing the Giants
+                </p>
+              } />
               </List>
             </div>
           </div>
@@ -109,54 +111,45 @@ class PartyDetail extends React.Component {
                 <RaisedButton label="发表评论" secondary={true} />
               </div>
               <ListItem
-                leftAvatar={<Avatar src="http://material-ui.com/images/ok-128.jpg" />}
+                leftAvatar={imageAvatar}
+                disabled={true}
                 primaryText="Brunch this weekend?"
                 secondaryText={
-                <p>
-                  <span style={{color: Colors.darkBlack}}>Brendan Lim</span> --
-                  I&apos;ll be in your neighborhood this weekend.
-                </p>
-              } />
-              <ListDivider inset={true} />
+                  <p>
+                    123
+                  </p>
+                  }
+                />
               <ListItem
-                leftAvatar={<Avatar src="http://material-ui.com/images/uxceo-128.jpg" />}
-                primaryText="Oui oui"
+                leftAvatar={imageAvatar}
+                disabled={true}
+                primaryText="Brunch this weekend?"
                 secondaryText={
-                <p>
-                  <span style={{color: Colors.darkBlack}}>Grace Ng</span> --
-                  Do you have Paris recommendations?
-                </p>
-              } />
-              <ListDivider inset={true} />
+                  <p>
+                    Do you have Paris recommendations?Grace Ng--Do you have Paris recommendati
+                  </p>
+                  }
+                />
               <ListItem
-                leftAvatar={<Avatar src="http://material-ui.com/images/kerem-128.jpg" />}
-                primaryText="Birthday gift"
+                leftAvatar={imageAvatar}
+                disabled={true}
+                primaryText="Brunch this weekend?"
                 secondaryText={
-                <p>
-                  <span style={{color: Colors.darkBlack}}>Kerem Suer</span> --
-                  Do you have any ideas on what I
-                </p>
-              } />
-              <ListDivider inset={true} />
+                  <p>
+                    Do you have Paris recom
+                  </p>
+                  }
+                />
               <ListItem
-                leftAvatar={<Avatar src="http://material-ui.com/images/raquelromanp-128.jpg" />}
-                primaryText="Recipe to try"
+                leftAvatar={imageAvatar}
+                disabled={true}
+                primaryText="Brunch this weekend?"
                 secondaryText={
-                <p>
-                  <span style={{color: Colors.darkBlack}}>Raquel Parrado</span> --
-                  We should eat this: grated cheese
-                </p>
-              } />
-              <ListDivider inset={true} />
-              <ListItem
-                leftAvatar={<Avatar src="http://material-ui.com/images/chexee-128.jpg" />}
-                primaryText="Giants game"
-                secondaryText={
-                <p>
-                  <span style={{color: Colors.darkBlack}}>Chelsea Otakan</span> --
-                  Any interest in seeing the Giants
-                </p>
-              } />
+                  <p>
+                    Do you have Paris recommendations?Grace Ng--Do you have Paris recommendations?--Do you have Paris recommendations?Grace Ng--Do you have Paris recommendations?
+                  </p>
+                  }
+                />
             </List>
           </div>
         </div>

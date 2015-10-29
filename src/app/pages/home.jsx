@@ -19,10 +19,12 @@ class Home extends React.Component {
     return (
       <div className="home-page">
         <Layout>
-          <div className="right-bar" style={{"float": "right", "maxWidth": "300px"}}>
+          <div className="right-bar">
             <HotPartiesList />
           </div>
-          <div className="party-cards-list" style={{"maxWidth": "650px"}}>
+          <div className="party-cards-list">
+            <PartyCard />
+            <PartyCard />
             <PartyCard />
             <PartyCard />
             <PartyCard />
