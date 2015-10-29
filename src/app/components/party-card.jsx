@@ -5,17 +5,8 @@
 
 const React = require('react');
 const AppTopBar = require('./app-top-bar');
-let {
-  Avatar,
-  Card,
-  CardActions,
-  CardExpandable,
-  CardHeader,
-  CardMedia,
-  CardText,
-  CardTitle,
-  FlatButton,
-  } = require('material-ui');
+require('style/components/party-card.less');
+import { Link } from 'react-router';
 
 class PartyCard extends React.Component {
 
@@ -23,16 +14,28 @@ class PartyCard extends React.Component {
 
     return (
       <div className="party-card">
-        <Card>
-          <CardHeader
-            title="Title"
-            subtitle="Subtitle"
-            avatar={<Avatar style={{color:'red'}}>A</Avatar>}/>
-          <CardMedia>
-            <img src="http://lorempixel.com/600/337/nature/"/>
-          </CardMedia>
-          <CardTitle title="Title" subtitle="Subtitle"/>
-        </Card>
+        <h2 className="title">
+          <Link to={`/signIn`}>
+            This is Title
+          </Link>
+        </h2>
+        <div className="subtitle">This is Subtitle</div>
+        <div className="photo">
+          <Link to={`/signIn`}>
+            <img src="http://lorempixel.com/600/337/nature/" />
+          </Link>
+        </div>
+        <div className="attend-party-users">
+          <span className="item-user">
+            <img src="http://material-ui.com/images/uxceo-128.jpg" />
+          </span>
+          <span className="item-user">
+            <img src="http://material-ui.com/images/uxceo-128.jpg" />
+          </span>
+          <span className="item-user">
+            <img src="http://material-ui.com/images/uxceo-128.jpg" />
+          </span>
+        </div>
       </div>
     );
   }

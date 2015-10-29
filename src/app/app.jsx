@@ -9,6 +9,7 @@
   let injectTapEventPlugin = require('react-tap-event-plugin');
   const AppRoutes = require('./app-routes.jsx');
   const createHistory = require('history/lib/createHashHistory');
+  require('app/style/main.less');
 
   //Needed for React Developer Tools
   window.React = React;

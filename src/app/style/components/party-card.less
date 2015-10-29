@@ -1,0 +1,46 @@
+/*
+* 聚会列表子项
+*/
+@import "../variables.less";
+.party-card {
+	border: 1px solid @grayLighter;
+	padding: 10px 20px;
+	background: @white;
+	&:hover {
+		box-shadow: 0 0 20px rgba(0,0,0,0.2);
+	}
+	.title {
+		font-size: @fontSizeBig;
+		a {
+			color: @blackLight;
+			&:hover {
+				color: @black;
+			}
+		}
+	}
+	.subtitle {
+		font-size: @fontSizeExtraSmall;
+		color: @gray;
+	}
+	.photo {
+		width: 100%;
+		max-width: 650px;
+		max-height: 300px;
+		overflow : hidden;
+		margin-top: 10px;
+		img {
+			width: 100%;
+		}
+	}
+	.attend-party-users {
+		margin-top: 20px;
+		.item-user {
+			margin-right: 6px;
+			img {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%
+			}
+		}
+	}
+}

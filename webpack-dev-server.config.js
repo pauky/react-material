@@ -18,6 +18,7 @@ var config = {
       "web_modules",
       "node_modules",
       path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'src/app'),
       //path.resolve(__dirname, 'src/app/components/pages/components'),
       path.resolve(__dirname, 'node_modules'),
       path.resolve(__dirname, 'node_modules/material-ui/lib')
@@ -64,6 +65,11 @@ var config = {
         //React-hot loader and
         test: /\.(js|jsx)$/,  //All .js and .jsx files
         loaders: ['react-hot','babel-loader?optional=runtime&stage=0'], //react-hot is like browser sync and babel loads jsx and es6-7
+        exclude: [nodeModulesPath]
+      },
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader',
         exclude: [nodeModulesPath]
       }
     ]

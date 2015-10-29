@@ -1,0 +1,33 @@
+//@dev:                'http://127.0.0.1:3101/zz-static/@{version}';//--global-var=version=10
+//@sit:                'http://sit.static.pintu360.com/zz-static/@{version}';
+//@uat:                'http://static.pintu360.com/uat/zz-static/@{version}';
+//@prd:                'http://static.pintu360.com/zz-static/@{version}';
+//@staticDomain:  `"@{ENV}" == 'dev' ? @{dev} : ("@{ENV}" == 'sit' ? @{sit} : ("@{ENV}" == 'uat' ? @{uat} : ("@{ENV}" == 'prd' ? @{prd} : @{dev})))`; //根据less命令行参数选择staticDomain的全局变量, --global-var=ENV=dev
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+@white: #fff;
+@grayLighter: #eee;
+@grayLight: #ccc;
+@gray: #aaa;
+@grayDark: #777;
+@grayDarker: #555;
+@black: #000;
+@blackLight: #333;
+@borderColor: rgba(238, 238, 238, .5);
+
+/*--- font-size ---*/
+@fontSizeMicro: 12px;
+@fontSizeMini: 14px;
+@fontSizeExtraSmall: 16px;
+@fontSizeSmall: 18px;
+@fontSizeNormal: 20px;
+@fontSizeBig: 1.5rem;
+@fontSizeBigger: 32px;
+@fontSizeMax: 48px;
+
+/*-- img ---*/
+

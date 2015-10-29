@@ -30,7 +30,7 @@ class AppTopBar extends React.Component {
     return (
       <div className="app-top-bar">
         <AppBar
-          title="Pauky"
+          title=""
           onLeftIconButtonTouchTap={this._showLeftNavClick.bind(this)}
            />
         <LeftNav ref="leftNav" docked={false} menuItems={menuItems} />

@@ -7,6 +7,7 @@ const React = require('react');
 const Layout = require('app/components/layout');
 const PartyCard = require('app/components/party-card');
 const HotPartiesList = require('app/components/hot-parties-list');
+require('style/pages/home.less');
 
 class Home extends React.Component {
 
@@ -16,9 +17,8 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <Layout />
-        <div className="container" style={{"maxWidth": "960px", "margin": "80px auto 0 auto"}}>
+      <div className="home-page">
+        <Layout>
           <div className="right-bar" style={{"float": "right", "maxWidth": "300px"}}>
             <HotPartiesList />
           </div>
@@ -27,7 +27,7 @@ class Home extends React.Component {
             <PartyCard />
             <PartyCard />
           </div>
-        </div>
+        </Layout>
       </div>
     );
   }
