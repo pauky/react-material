@@ -24,22 +24,11 @@ class PartyCard extends React.Component {
           <span className="address pull-right">地址：广州市南方医科大学</span>
         </div>
         <div className="subtitle">This is Subtitle</div>
-        <div className="attend-party-users">
-          <Link to={`/`} className="item-user">
-            <img src="http://material-ui.com/images/uxceo-128.jpg" />
-          </Link>
-          <Link to={`/`} className="item-user">
-            <img src="http://material-ui.com/images/uxceo-128.jpg" />
-          </Link>
-          <Link to={`/`} className="item-user">
-            <img src="http://material-ui.com/images/uxceo-128.jpg" />
-          </Link>
-        </div>
       </div>
     );
 
   }
 
-};
+}
 
 module.exports = PartyCard;

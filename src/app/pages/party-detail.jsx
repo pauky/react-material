@@ -36,67 +36,83 @@ class PartyDetail extends React.Component {
           <div className="party-detail">
             <h1 className="title text-center">This is Title</h1>
             <div className="time">
-              <div>时间：</div>
-              <div>2015-10-20 10:00</div>
+              <span>时间：</span>
+              <span>2015-10-20 10:00</span>
             </div>
             <div className="address">
-              <div>地点：</div>
-              <div>广州市华南师范大学</div>
+              <span>地点：</span>
+              <span>广州市华南师范大学</span>
+              <div className="map">
+                <img src="images/a.jpg" />
+              </div>
             </div>
             <div className="content">
               <p>This is The Party Content</p>
             </div>
-            <div className="participants">
-              <List subheader="参会人员：">
+            <div className="publisher">
+              <List subheader="发布者：">
                 <ListItem
                   leftAvatar={<Avatar src="http://material-ui.com/images/ok-128.jpg" />}
                   primaryText="Brunch this weekend?"
                   secondaryText={
-                <p>
-                  <span style={{color: Colors.darkBlack}}>Brendan Lim</span> --
-                  I&apos;ll be in your neighborhood this weekend.
-                </p>
-              } />
+                  <p>
+                    <span style={{color: Colors.darkBlack}}>Brendan Lim</span> --
+                    I&apos;ll be in your neighborhood this weekend.
+                  </p>
+                } />
+              </List>
+            </div>
+            <div className="participants">
+              <List subheader="参与者：">
+                <ListItem
+                  leftAvatar={<Avatar src="http://material-ui.com/images/ok-128.jpg" />}
+                  primaryText="Brunch this weekend?"
+                  secondaryText={
+                  <p>
+                    <span style={{color: Colors.darkBlack}}>Brendan Lim</span> --
+                    I&apos;ll be in your neighborhood this weekend.
+                  </p>
+                } />
                 <ListDivider inset={true} />
                 <ListItem
                   leftAvatar={<Avatar src="http://material-ui.com/images/uxceo-128.jpg" />}
                   primaryText="Oui oui"
                   secondaryText={
-                <p>
-                  <span style={{color: Colors.darkBlack}}>Grace Ng</span> --
-                  Do you have Paris recommendations?
-                </p>
-              } />
+                  <p>
+                    <span style={{color: Colors.darkBlack}}>Grace Ng</span> --
+                    Do you have Paris recommendations?
+                  </p>
+                } />
                 <ListDivider inset={true} />
                 <ListItem
                   leftAvatar={<Avatar src="http://material-ui.com/images/kerem-128.jpg" />}
                   primaryText="Birthday gift"
                   secondaryText={
-                <p>
-                  <span style={{color: Colors.darkBlack}}>Kerem Suer</span> --
-                  Do you have any ideas on what I
-                </p>
-              } />
+                  <p>
+                    <span style={{color: Colors.darkBlack}}>Kerem Suer</span> --
+                    Do you have any ideas on what I
+                  </p>
+                } />
                 <ListDivider inset={true} />
                 <ListItem
                   leftAvatar={<Avatar src="http://material-ui.com/images/raquelromanp-128.jpg" />}
                   primaryText="Recipe to try"
                   secondaryText={
-                <p>
-                  <span style={{color: Colors.darkBlack}}>Raquel Parrado</span> --
-                  We should eat this: grated cheese
-                </p>
-              } />
+                  <p>
+                    <span style={{color: Colors.darkBlack}}>Raquel Parrado</span> --
+                    We should eat this: grated cheese
+                  </p>
+                } />
                 <ListDivider inset={true} />
                 <ListItem
                   leftAvatar={<Avatar src="http://material-ui.com/images/chexee-128.jpg" />}
                   primaryText="Giants game"
                   secondaryText={
-                <p>
-                  <span style={{color: Colors.darkBlack}}>Chelsea Otakan</span> --
-                  Any interest in seeing the Giants
-                </p>
-              } />
+                  <p>
+                    <span style={{color: Colors.darkBlack}}>Chelsea Otakan</span> --
+                    Any interest in seeing the Giants
+                  </p>
+                } />
               </List>
             </div>
           </div>
@@ -106,9 +122,9 @@ class PartyDetail extends React.Component {
               <div className="add-comment">
                 <TextField
                   className="comment-input"
-                  hintText="发表下意见吧！"
+                  hintText="有什么看法吗？"
                   multiLine={true} />
-                <RaisedButton label="发表评论" secondary={true} />
+                <RaisedButton label="发表评论" secondary={true} className="publish-btn"/>
               </div>
               <ListItem
                 leftAvatar={imageAvatar}
