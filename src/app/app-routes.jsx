@@ -18,6 +18,7 @@ const SignUp = require('app/pages/sign-up');
 const PartyDetail = require('app/pages/party-detail');
 const UserDetail = require('app/pages/user-detail');
 const LaunchParty = require('app/pages/launch-party');
+const UserEdit = require('app/pages/user-edit');
 
 
 /**
@@ -36,6 +37,7 @@ const AppRoutes = (
     <Route path="party/:id" component={PartyDetail} />
     <Route path="user/:id" component={UserDetail} />
     <Route path="launchParty" component={LaunchParty} />
+    <Route path="userEdit/:id" component={UserEdit} />
     <IndexRoute component={Home}/>
   </Route>
 );

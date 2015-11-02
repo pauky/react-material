@@ -7,6 +7,7 @@ const React = require('react');
 const Layout = require('app/components/layout');
 let {
   Avatar,
+  RaisedButton,
   } = require('material-ui');
 import { Link } from 'react-router';
 
@@ -27,6 +28,9 @@ class PartyDetail extends React.Component {
           <p className="school">南方医科大学</p>
           <p className="word">北京品途天下科技有限公司-广研所-web前端开发工程师</p>
           <p className="description">我是一只IT小小鸟，不知疲倦飞呀飞...</p>
+          <div>
+            <RaisedButton label="编辑用户资料" secondary={true} linkButton={true} href="/#/userEdit/123" />
+          </div>
         </div>
       </Layout>
     );
