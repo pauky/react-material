@@ -1,5 +1,5 @@
 /**
- * 发布聚会
+ * 用户编辑
  * @type {*|exports|module.exports}
  */
 
