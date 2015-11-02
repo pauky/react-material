@@ -4,10 +4,13 @@
  */
 
 let React = require('react');
+import { Link } from 'react-router';
 let { AppBar, FlatButton, LeftNav, IconMenu, MenuItem } = require('material-ui');
 let IconButton = require('icon-button');
 let ActionHome = require('svg-icons/action/home');
 const MoreVertIcon = require('svg-icons/navigation/more-vert');
+
+require('style/components/app-top-bar.less');
 
 class AppTopBar extends React.Component {
 
@@ -30,7 +33,8 @@ class AppTopBar extends React.Component {
     return (
       <div className="app-top-bar">
         <AppBar
-          title=""
+          className="app-bar"
+          title={<Link href="/#/" className="site-title">Pauky</Link>}
           onLeftIconButtonTouchTap={this._showLeftNavClick.bind(this)}
            />
         <LeftNav ref="leftNav" docked={false} menuItems={menuItems} />
