@@ -4,15 +4,19 @@
  */
 
 let React = require('react');
-import { Link } from 'react-router';
-let { AppBar, FlatButton, LeftNav, IconMenu, MenuItem } = require('material-ui');
+import { Link, History } from 'react-router';
+let { AppBar, Mixins, LeftNav, IconMenu, MenuItem } = require('material-ui');
 let IconButton = require('icon-button');
 let ActionHome = require('svg-icons/action/home');
+let NavigationMenu = require('svg-icons/navigation/menu');
+let NavigationChevronLeft = require('svg-icons/navigation/chevron-left');
 const MoreVertIcon = require('svg-icons/navigation/more-vert');
 
 require('style/components/app-top-bar.less');
 
 class AppTopBar extends React.Component {
+
+  Mixins = [History];
 
   constructor(props) {
     super(props);
@@ -34,17 +38,25 @@ class AppTopBar extends React.Component {
       <div className="app-top-bar">
         <AppBar
           className="app-bar"
-          title={<Link href="/#/" className="site-title">Pauky</Link>}
-          onLeftIconButtonTouchTap={this._showLeftNavClick.bind(this)}
-           />
+          title={<Link to={`/#/`} className="site-title">Pauky</Link>}
+          iconElementLeft={<IconButton onClick={this._historyBack.bind(this)}><NavigationChevronLeft /></IconButton>}
+          iconElementRight={<IconButton onClick={this._showLeftNavClick.bind(this)}><NavigationMenu /></IconButton>}
+          />
         <LeftNav ref="leftNav" docked={false} menuItems={menuItems} />
       </div>
     );
   }
 
+  // show leftNav
   _showLeftNavClick() {
     this.refs.leftNav.toggle();
   }
 
+  // page history back
+  _historyBack() {
+    history.go(-1);
+  }
+
 }
 module.exports = AppTopBar;
+
