@@ -11,6 +11,7 @@ const {
   } = require('material-ui');
 const ThemeManager = Styles.ThemeManager;
 const DefaultRawTheme = Styles.LightRawTheme;
+require('style/components/layout.less');
 
 const Layout = React.createClass({
 
