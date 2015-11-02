@@ -19,6 +19,12 @@ class PartyDetail extends React.Component {
     super(props);
   }
 
+  edit() {
+    require.ensure([], () => {
+      let Profile = require('cropperjs');
+    });
+  }
+
   render() {
     return (
       <Layout>

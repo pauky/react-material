@@ -6,6 +6,7 @@
 const React = require('react');
 let { TextField, RaisedButton, DatePicker, TimePicker, Styles } = require('material-ui');
 const Layout = require('app/components/layout');
+const http = require('app/components/http');
 require('style/pages/user-edit.less');
 
 class LaunchParty extends React.Component {
@@ -14,10 +15,38 @@ class LaunchParty extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    require.ensure([], () => {
+      require('cropperjs/dist/cropper.css');
+      let Cropper = require('cropperjs');
+      let image = document.querySelector('.avatar-wrapper > img');
+      let cropper = new Cropper(image, {
+        aspectRatio: 1 / 1,
+        crop: function(data) {
+          console.log(data.x);
+          console.log(data.y);
+          console.log(data.width);
+          console.log(data.height);
+          console.log(data.rotate);
+          console.log(data.scaleX);
+          console.log(data.scaleY);
+        },
+      });
+    });
+
+    http.test()
+      .then((res)=>{
+          console.log(res);
+        })
+  }
+
   render() {
     return (
       <Layout>
         <div className="user-edit-page text-center">
+          <div className="avatar-wrapper">
+            <img className="avatar" src="http://fengyuanchen.github.io/cropperjs/img/picture.jpg" />
+          </div>
           <div>
             <TextField
               hintText="用户名"

@@ -68,6 +68,10 @@ var config = {
         exclude: [nodeModulesPath]
       },
       {
+        test: /\.css$/,
+        loader: 'style!css-loader'
+      },
+      {
         test: /\.less$/,
         loader: 'style-loader!css-loader!less-loader',
         exclude: [nodeModulesPath]
