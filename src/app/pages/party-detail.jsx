@@ -52,6 +52,7 @@ class PartyDetail extends React.Component {
             <div className="publisher">
               <List subheader="发布者：">
                 <ListItem
+                  href="/#/user/123"
                   leftAvatar={<Avatar src="http://material-ui.com/images/ok-128.jpg" />}
                   primaryText="Brunch this weekend?"
                   secondaryText={
@@ -65,6 +66,7 @@ class PartyDetail extends React.Component {
             <div className="participants">
               <List subheader="参与者：">
                 <ListItem
+                  href="/#/user/123"
                   leftAvatar={<Avatar src="http://material-ui.com/images/ok-128.jpg" />}
                   primaryText="Brunch this weekend?"
                   secondaryText={
@@ -75,6 +77,7 @@ class PartyDetail extends React.Component {
                 } />
                 <ListDivider inset={true} />
                 <ListItem
+                  href="/#/user/123"
                   leftAvatar={<Avatar src="http://material-ui.com/images/uxceo-128.jpg" />}
                   primaryText="Oui oui"
                   secondaryText={
@@ -85,6 +88,7 @@ class PartyDetail extends React.Component {
                 } />
                 <ListDivider inset={true} />
                 <ListItem
+                  href="/#/user/123"
                   leftAvatar={<Avatar src="http://material-ui.com/images/kerem-128.jpg" />}
                   primaryText="Birthday gift"
                   secondaryText={
@@ -95,6 +99,7 @@ class PartyDetail extends React.Component {
                 } />
                 <ListDivider inset={true} />
                 <ListItem
+                  href="/#/user/123"
                   leftAvatar={<Avatar src="http://material-ui.com/images/raquelromanp-128.jpg" />}
                   primaryText="Recipe to try"
                   secondaryText={
@@ -105,6 +110,7 @@ class PartyDetail extends React.Component {
                 } />
                 <ListDivider inset={true} />
                 <ListItem
+                  href="/#/user/123"
                   leftAvatar={<Avatar src="http://material-ui.com/images/chexee-128.jpg" />}
                   primaryText="Giants game"
                   secondaryText={
