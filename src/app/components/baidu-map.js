@@ -5,16 +5,27 @@
 
 'use strict';
 
+let array = require('lodash/object');
+
 class BaiduMap {
 
   constructor(container, place, cb) {
-    this.container = container;
+    let _self = this;
+    _self.container = array.assign({}, {
+      map: 'l-map', // 必须为id
+      resPanel: '#searchResultPanel',
+      input: 'suggestId'
+    }, container);
+    _self.place = array.assign({}, {
+      city: '',
+      address: '',
+      coordinate: []
+    }, place);
     this.place = place;
-    this.cb = cb;
-    this.createMap(container, place, cb);
+    this.createMap(_self.place, cb);
   }
 
-  createMap(container, place, cb) {
+  createMap(place, cb) {
     let _self = this;
     let script = document.createElement('script');
     script.src = 'http://api.map.baidu.com/api?v=2.0&ak=Kp1RBH12EduqccnW31WybRja&callback=baiduMapCompleted';

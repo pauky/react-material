@@ -12,6 +12,35 @@ class LaunchParty extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      mapStatus: 'hidden'
+    };
+  }
+
+  componentDidMount() {
+    let _self = this;
+    let party = {};
+
+    require.ensure([], () => {
+      let BaiduMap = require('components/baidu-map.js');
+      new BaiduMap(
+        {
+          map: 'partyMap' // 必须为id
+        },
+        {
+          city: party.city || '',
+          address: '',
+          coordinate: {
+            lng: party.coordinate && party.coordinate[0],
+            lat: party.coordinate && party.coordinate[1]
+          }
+        },
+        function (res) {
+          _self.setState({
+            mapStatus: ''
+          });
+        });
+    });
   }
 
   render() {
@@ -37,16 +66,10 @@ class LaunchParty extends React.Component {
               floatingLabelText="聚会详细描述"
               multiLine={true} />
           </div>
-          <div>
-            <TextField
-              hintText="填写聚会地址"
-              floatingLabelText="聚会地址"/>
-          </div>
           <div className="party-date">
             <DatePicker
               hintText="聚会日期" />
           </div>
-
           <div>
             <TimePicker
               ref="picker24hr"
@@ -54,12 +77,19 @@ class LaunchParty extends React.Component {
               hintText="聚会具体时间"
               autoOk={true} />
           </div>
-
           <div>
             <TextField
               hintText="人数（不包括自己）"
               floatingLabelText="人数（不包括自己）"/>
           </div>
+          <div className="party-address">
+            <TextField
+              id="suggestId"
+              hintText="填写聚会地址"
+              floatingLabelText="聚会地址"/>
+            <div id="searchResultPanel"></div>
+          </div>
+          <div id="partyMap" className="party-map"></div>
           <div className="action-btns">
             <RaisedButton label="发布聚会" secondary={true} />
           </div>

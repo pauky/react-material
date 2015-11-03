@@ -58,7 +58,9 @@ class PartyDetail extends React.Component {
       let BaiduMap = require('components/baidu-map.js');
       new BaiduMap(
         {
-          map: 'map' // 必须为id
+          map: 'map', // 必须为id
+          resPanel: '#searchResultPanel',
+          input: 'suggestId'
         },
         {
           city: party.city || '',
@@ -69,6 +71,7 @@ class PartyDetail extends React.Component {
           }
         },
         function (res) {
+          console.log(res);
           _self.setState({
             mapStatus: '',
             hasMap: true
