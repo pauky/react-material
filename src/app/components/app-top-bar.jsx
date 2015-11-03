@@ -5,7 +5,7 @@
 
 let React = require('react');
 import { Link, History } from 'react-router';
-let { AppBar, Mixins, LeftNav, IconMenu, MenuItem } = require('material-ui');
+let { AppBar, Mixins, LeftNav, IconMenu, MenuItem, Avatar } = require('material-ui');
 let IconButton = require('icon-button');
 let ActionHome = require('svg-icons/action/home');
 let NavigationMenu = require('svg-icons/navigation/menu');
@@ -30,8 +30,7 @@ class AppTopBar extends React.Component {
     let menuItems = [
       { type: MenuItem.Types.LINK, payload: '/#/', text: 'Home' },
       { type: MenuItem.Types.LINK, payload: '/#/signIn', text: '登录' },
-      { type: MenuItem.Types.LINK, payload: '/#/launchParty', text: '发布聚会' },
-      { type: MenuItem.Types.SUBHEADER, text: 'Pauky' },
+      { type: MenuItem.Types.LINK, payload: '/#/launchParty', text: '发布聚会' }
     ];
 
     return (
@@ -42,7 +41,17 @@ class AppTopBar extends React.Component {
           iconElementLeft={<IconButton onClick={this._historyBack.bind(this)}><NavigationChevronLeft /></IconButton>}
           iconElementRight={<IconButton onClick={this._showLeftNavClick.bind(this)}><NavigationMenu /></IconButton>}
           />
-        <LeftNav ref="leftNav" docked={false} menuItems={menuItems} />
+        <LeftNav
+          ref="leftNav"
+          docked={false}
+          menuItems={menuItems}
+          header={
+            <div className="user-info">
+              <Link to={`/user/123`}>
+                <Avatar className="avatar" src="http://material-ui.com/images/uxceo-128.jpg" />
+                <span className="username">Pauky</span>
+              </Link>
+            </div>} />
       </div>
     );
   }
