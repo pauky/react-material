@@ -17,6 +17,8 @@ let {
   Toggle,
   RaisedButton,
   } = require('material-ui');
+let MapsPlace = require('svg-icons/maps/place');
+let ActionHome = require('svg-icons/action/home');
 import { Link } from 'react-router';
 let { Colors } = Styles;
 
@@ -26,6 +28,53 @@ class PartyDetail extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      mapStatus: 'hidden',
+      hasMap: false
+    };
+  }
+
+  componentDidMount() {
+
+  }
+
+  _showMap() {
+    let _self = this;
+    let party = {};
+
+    if (!_self.state.mapStatus) {
+      return _self.setState({
+        mapStatus: 'hidden',
+        hasMap: true
+      });
+    }
+    if (_self.state.hasMap) {
+      return _self.setState({
+        mapStatus: '',
+        hasMap: true
+      });
+    }
+    require.ensure([], () => {
+      let BaiduMap = require('components/baidu-map.js');
+      new BaiduMap(
+        {
+          map: 'map' // 必须为id
+        },
+        {
+          city: party.city || '',
+          address: '广州市华南师范大学',
+          coordinate: {
+            lng: party.coordinate && party.coordinate[0],
+            lat: party.coordinate && party.coordinate[1]
+          }
+        },
+        function (res) {
+          _self.setState({
+            mapStatus: '',
+            hasMap: true
+          });
+        });
+    });
   }
 
   render() {
@@ -40,11 +89,12 @@ class PartyDetail extends React.Component {
               <span>2015-10-20 10:00</span>
             </div>
             <div className="address">
-              <span>地点：</span>
-              <span>广州市华南师范大学</span>
-              <div className="map">
-                <img src="images/a.jpg" />
-              </div>
+              <span className="address-des">
+                <span>地点：</span>
+                <span>广州市华南师范大学</span>
+              </span>
+              <MapsPlace className="maps-place" onClick={this._showMap.bind(this)} />
+              <div className={this.state.mapStatus+' map'} id="map"></div>
             </div>
             <div className="content">
               <p>This is The Party Content</p>
