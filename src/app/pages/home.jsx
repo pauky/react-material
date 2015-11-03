@@ -6,7 +6,8 @@
 const React = require('react');
 const Layout = require('app/components/layout');
 const PartyCard = require('app/components/party-card');
-const HotPartiesList = require('app/components/hot-parties-list');
+const HotPartiesList = require('components/hot-parties-list');
+let Paging = require('components/paging');
 require('style/pages/home.less');
 
 class Home extends React.Component {
@@ -29,6 +30,7 @@ class Home extends React.Component {
             <PartyCard />
             <PartyCard />
           </div>
+          <Paging />
         </Layout>
       </div>
     );
