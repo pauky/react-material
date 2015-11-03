@@ -25,14 +25,21 @@ class LaunchParty extends React.Component {
           </div>
           <div>
             <TextField
-              className="description text-left"
+              className="subtitle text-left"
               hintText="填写聚会简介"
               floatingLabelText="聚会简介"
               multiLine={true} />
           </div>
           <div>
             <TextField
-              hintText="聚会地址"
+              className="description text-left"
+              hintText="填写聚会详细描述"
+              floatingLabelText="聚会详细描述"
+              multiLine={true} />
+          </div>
+          <div>
+            <TextField
+              hintText="填写聚会地址"
               floatingLabelText="聚会地址"/>
           </div>
           <div className="party-date">
