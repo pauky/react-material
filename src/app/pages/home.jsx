@@ -30,10 +30,19 @@ class Home extends React.Component {
             <PartyCard />
             <PartyCard />
           </div>
-          <Paging />
+          <Paging
+            onChange={this.changePage.bind(this)}
+            currentPage={1}
+            totalItems={200}
+            pageSize={10}
+            showSize={7} />
         </Layout>
       </div>
     );
+  }
+
+  changePage(pageNum) {
+    console.log(pageNum+' page');
   }
 
 }
