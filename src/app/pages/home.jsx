@@ -31,7 +31,7 @@ class Home extends React.Component {
             <PartyCard />
           </div>
           <Paging
-            onChange={this.changePage.bind(this)}
+            onChange={this._changePage.bind(this)}
             currentPage={1}
             totalItems={200}
             pageSize={10}
@@ -41,7 +41,8 @@ class Home extends React.Component {
     );
   }
 
-  changePage(pageNum) {
+  // 改变页码的回调
+  _changePage(pageNum) {
     console.log(pageNum+' page');
   }
 

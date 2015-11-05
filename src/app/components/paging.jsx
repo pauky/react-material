@@ -20,6 +20,7 @@ class Paging extends React.Component {
 
   static propTypes = {
     onChange: React.PropTypes.func,
+    className: React.PropTypes.string,
     selectedPage: React.PropTypes.number,
     currentPage: React.PropTypes.number,
     totalItems: React.PropTypes.number,
@@ -40,43 +41,47 @@ class Paging extends React.Component {
     let showSize = 0; // 要展示的页码数
     let start = 0; // 要展示的页码的起始位置
     let showSizeHalf = Math.floor(this.props.showSize/2); // 需要展示页数的一半
-    if (this.props.showSize < this.totalPages) {
-      // 当前页数是否大于需要展示页数的一半
-      if (this.state.currentPage > showSizeHalf) {
-        // 剩下的页数是否大于需要展示页数的一半
-        if (this.totalPages - this.state.currentPage >= showSizeHalf) {
-          start = this.state.currentPage - showSizeHalf;
+    if (this.props.totalItems > this.props.pageSize) {
+
+      if (this.props.showSize < this.totalPages) {
+        // 当前页数是否大于需要展示页数的一半
+        if (this.state.currentPage > showSizeHalf) {
+          // 剩下的页数是否大于需要展示页数的一半
+          if (this.totalPages - this.state.currentPage >= showSizeHalf) {
+            start = this.state.currentPage - showSizeHalf;
+          } else {
+            start = this.state.currentPage - (this.props.showSize - (this.totalPages - this.state.currentPage)) + 1;
+          }
         } else {
-          start = this.state.currentPage - (this.props.showSize - (this.totalPages - this.state.currentPage)) + 1;
+          start = 1;
         }
       } else {
         start = 1;
       }
-    } else {
-      start = 1;
-    }
-    showSize = this.props.showSize > this.totalPages ? this.totalPages : this.props.showSize;
-    for (let i=0; i < showSize; i++) {
-      showPages.push(start + i);
-    }
+      showSize = this.props.showSize > this.totalPages ? this.totalPages : this.props.showSize;
+      for (let i=0; i < showSize; i++) {
+        showPages.push(start + i);
+      }
 
-    pagingList = showPages.map((item, index) => {
-      return (
-        <RaisedButton
-          className="page-item"
-          key={index}
-          secondary={item === this.state.currentPage}
-          label={item}
-          style={pageItemStyle}
-          onClick={this._selectPage.bind(this)} />
-      )
-    });
+      pagingList = showPages.map((item, index) => {
+        return (
+          <RaisedButton
+            className="page-item"
+            key={index}
+            secondary={item === this.state.currentPage}
+            label={item}
+            style={pageItemStyle}
+            onClick={this._selectPage.bind(this)} />
+        )
+      });
+
+      pagingList.unshift(<RaisedButton className="page-item" key="pre" label="<" style={pageItemStyle} onClick={this._prePage.bind(this)} />);
+      pagingList.push(<RaisedButton className="page-item" key="next" label=">" style={pageItemStyle} onClick={this._nextPage.bind(this)} />);
+    }
 
     return (
-      <div className="paging">
-        <RaisedButton className="page-item" label="<" style={pageItemStyle} onClick={this._prePage.bind(this)} />
+      <div className={"paging "+this.props.className}>
         {pagingList}
-        <RaisedButton className="page-item" label=">" style={pageItemStyle} onClick={this._nextPage.bind(this)} />
       </div>
     );
 

@@ -19,6 +19,7 @@ let {
   } = require('material-ui');
 let MapsPlace = require('svg-icons/maps/place');
 let ActionHome = require('svg-icons/action/home');
+let Paging = require('components/paging');
 import { Link } from 'react-router';
 let { Colors } = Styles;
 
@@ -78,6 +79,11 @@ class PartyDetail extends React.Component {
           });
         });
     });
+  }
+
+  // 改变页码的回调
+  _changePage(pageNum) {
+    console.log(pageNum+' page');
   }
 
   render() {
@@ -173,6 +179,13 @@ class PartyDetail extends React.Component {
                   </p>
                 } />
               </List>
+              <Paging
+                className="text-right"
+                onChange={this._changePage.bind(this)}
+                currentPage={1}
+                totalItems={30}
+                pageSize={10}
+                showSize={7} />
             </div>
           </div>
 
