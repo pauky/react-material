@@ -36,7 +36,6 @@ class PartyDetail extends React.Component {
   }
 
   componentDidMount() {
-
   }
 
   _showMap() {
@@ -102,6 +101,7 @@ class PartyDetail extends React.Component {
                 <span>地点：</span>
                 <span>广州市华南师范大学</span>
               </span>
+              <input className="hidden" id="suggestId" />
               <MapsPlace className="maps-place" onClick={this._showMap.bind(this)} />
               <div className={this.state.mapStatus+' map'} id="map"></div>
             </div>
