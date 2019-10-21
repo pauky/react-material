@@ -33,7 +33,7 @@
     "cropperjs": "^0.3.0",
     "css-loader": "^0.21.0",
     "history": "^1.11.1",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.15",
     "material-ui": "^0.13.0",
     "react": "^0.14.0",
     "react-addons-create-fragment": "^0.14.0",
